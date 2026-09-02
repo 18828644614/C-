@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3201b03b79205aa4",
+            "id": "ffa41f22db70ee93",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -24,21 +24,36 @@
             }
           },
           {
-            "id": "9db6336e5d49243c",
+            "id": "1c4243a5f185997e",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03-STL与泛型编程/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "f178eb82257040c8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-核心语言/类与对象.md",
+                "file": "02-核心语言/对象生命周期与RAII.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "类与对象"
+              "title": "对象生命周期与RAII"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -72,7 +87,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "explicit",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02-核心语言/类与对象.md",
+                "file": "02-核心语言/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02-核心语言/类与对象.md",
+                "file": "02-核心语言/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -179,7 +194,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02-核心语言/类与对象.md",
+                "file": "02-核心语言/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,41 +221,43 @@
       "bases:新建数据库": false
     }
   },
-  "active": "9db6336e5d49243c",
+  "active": "ffa41f22db70ee93",
   "lastOpenFiles": [
-    "functions_scope_verify.exe",
-    "functions_scope_verify.cpp",
-    "01-基础入门/函数与作用域.md",
-    "02-核心语言/构造函数与析构函数.md",
+    "03-STL与泛型编程/README.md",
     "02-核心语言/README.md",
-    "类与对象.md",
-    "02-核心语言/类与对象.md",
-    "notes.md",
+    "02-核心语言/对象生命周期与RAII.md",
+    "03-STL与泛型编程/标准库概览.md",
+    "07-问题解决/README.md",
+    "08-工程与项目/README.md",
+    "06-实践笔记/README.md",
+    "02-核心语言/运算符重载.md",
     "02-核心语言/继承与多态.md",
-    "constructor_demo_test.exe",
-    "01-基础入门/README.md",
-    "01-基础入门/源文件、编译与链接.md",
-    "src/program1/main.o",
-    "src/program1/main.i",
-    "src/program1/main.cpp",
-    "src/program1/text.cpp",
-    "src/program1/text.h",
-    "src/program1",
-    "task_plan.md",
-    "01-基础入门/数组、指针与引用.md",
+    "02-核心语言/构造函数与析构函数.md",
+    "exception_raii_output.txt",
+    "02-核心语言/异常处理.md",
     "01-基础入门/类型、变量与常量.md",
+    "01-基础入门/README.md",
+    "01-基础入门/数组、指针与引用.md",
     "01-基础入门/基本语法与控制流.md",
+    "01-基础入门/函数与作用域.md",
+    "02-核心语言/类与对象.md",
+    "类与对象.md",
+    "array_pointer_reference.exe",
+    "array_pointer_reference.cpp",
+    "types_variables_constants.exe",
+    "types_variables_constants.cpp",
+    "basic_control_flow.exe",
+    "basic_control_flow.cpp",
     "01-基础入门/开发环境.md",
+    "_tmp_overview_demo.exe",
+    "_tmp_overview_demo.cpp",
+    "01-基础入门/C++概览.md",
+    "01-基础入门/源文件、编译与链接.md",
+    "functions_scope_verify.exe",
+    "notes.md",
+    "task_plan.md",
     "08-工程与项目/项目选题与复盘.md",
     "08-工程与项目/代码规范与静态分析.md",
-    "08-工程与项目/调试与Sanitizer.md",
-    "08-工程与项目/单元测试.md",
-    "08-工程与项目/依赖管理与包管理.md",
-    "08-工程与项目/CMake构建.md",
-    "05-并发与性能/性能分析与优化.md",
-    "05-并发与性能/并发设计与同步策略.md",
-    "05-并发与性能/原子操作与内存模型.md",
-    "05-并发与性能/互斥、锁与条件变量.md",
-    "05-并发与性能/线程与任务.md"
+    "08-工程与项目/调试与Sanitizer.md"
   ]
 }
