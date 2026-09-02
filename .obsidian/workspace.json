@@ -10,6 +10,7 @@
           {
             "id": "3201b03b79205aa4",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -17,11 +18,27 @@
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "README"
             }
+          },
+          {
+            "id": "9db6336e5d49243c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02-核心语言/类与对象.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "类与对象"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +100,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "4420ed6750a49f84",
@@ -99,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02-核心语言/README.md",
+                "file": "02-核心语言/类与对象.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02-核心语言/README.md",
+                "file": "02-核心语言/类与对象.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02-核心语言/README.md",
+                "file": "02-核心语言/类与对象.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +206,31 @@
       "bases:新建数据库": false
     }
   },
-  "active": "fe020898eb0b77ba",
+  "active": "9db6336e5d49243c",
   "lastOpenFiles": [
+    "functions_scope_verify.exe",
+    "functions_scope_verify.cpp",
+    "01-基础入门/函数与作用域.md",
+    "02-核心语言/构造函数与析构函数.md",
+    "02-核心语言/README.md",
+    "类与对象.md",
+    "02-核心语言/类与对象.md",
+    "notes.md",
+    "02-核心语言/继承与多态.md",
+    "constructor_demo_test.exe",
+    "01-基础入门/README.md",
+    "01-基础入门/源文件、编译与链接.md",
+    "src/program1/main.o",
+    "src/program1/main.i",
+    "src/program1/main.cpp",
+    "src/program1/text.cpp",
+    "src/program1/text.h",
+    "src/program1",
+    "task_plan.md",
+    "01-基础入门/数组、指针与引用.md",
+    "01-基础入门/类型、变量与常量.md",
+    "01-基础入门/基本语法与控制流.md",
+    "01-基础入门/开发环境.md",
     "08-工程与项目/项目选题与复盘.md",
     "08-工程与项目/代码规范与静态分析.md",
     "08-工程与项目/调试与Sanitizer.md",
@@ -200,21 +241,6 @@
     "05-并发与性能/并发设计与同步策略.md",
     "05-并发与性能/原子操作与内存模型.md",
     "05-并发与性能/互斥、锁与条件变量.md",
-    "05-并发与性能/线程与任务.md",
-    "04-现代C++/协程概览.md",
-    "04-现代C++/概念与约束.md",
-    "04-现代C++/结构化绑定与初始化.md",
-    "04-现代C++/智能指针.md",
-    "04-现代C++/左值、右值与移动语义.md",
-    "04-现代C++/auto、decltype与类型推导.md",
-    "04-现代C++/C++11到C++23.md",
-    "03-STL与泛型编程/模板基础.md",
-    "03-STL与泛型编程/字符串、视图与范围.md",
-    "03-STL与泛型编程/函数对象与Lambda.md",
-    "03-STL与泛型编程/算法.md",
-    "03-STL与泛型编程/迭代器.md",
-    "03-STL与泛型编程/关联容器.md",
-    "03-STL与泛型编程/顺序容器.md",
-    "03-STL与泛型编程/标准库概览.md"
+    "05-并发与性能/线程与任务.md"
   ]
 }
