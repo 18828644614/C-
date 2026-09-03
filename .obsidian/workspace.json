@@ -24,36 +24,21 @@
             }
           },
           {
-            "id": "1c4243a5f185997e",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03-STL与泛型编程/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "f178eb82257040c8",
+            "id": "0c9c8aa294668a82",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-核心语言/对象生命周期与RAII.md",
+                "file": "02-核心语言/继承与多态.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "对象生命周期与RAII"
+              "title": "继承与多态"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -221,10 +206,12 @@
       "bases:新建数据库": false
     }
   },
-  "active": "ffa41f22db70ee93",
+  "active": "0c9c8aa294668a82",
   "lastOpenFiles": [
-    "03-STL与泛型编程/README.md",
     "02-核心语言/README.md",
+    "02-核心语言/类与对象.md",
+    "类与对象.md",
+    "03-STL与泛型编程/README.md",
     "02-核心语言/对象生命周期与RAII.md",
     "03-STL与泛型编程/标准库概览.md",
     "07-问题解决/README.md",
@@ -240,8 +227,6 @@
     "01-基础入门/数组、指针与引用.md",
     "01-基础入门/基本语法与控制流.md",
     "01-基础入门/函数与作用域.md",
-    "02-核心语言/类与对象.md",
-    "类与对象.md",
     "array_pointer_reference.exe",
     "array_pointer_reference.cpp",
     "types_variables_constants.exe",
