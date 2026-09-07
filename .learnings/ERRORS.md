@@ -395,3 +395,36 @@ apply_patch verification failed: Failed to find expected lines in E:\Linux\C++\0
 - **Resolved**: 2026-09-02T00:00:00+08:00
 - **Commit/PR**: none
 - **Notes**: 后续将按精确读取的上下文分段修改。
+
+---
+
+## [ERR-20260907-A01] skill-path-resolution
+
+**Logged**: 2026-09-07T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: config
+
+### 摘要（Summary）
+首次读取 `using-superpowers` 技能时使用了不存在的路径，命令返回路径不存在错误；未影响文档编辑。
+
+### 原始错误（Error）
+```
+Get-Content: Cannot find path 'C:\Users\Administrator\.codex\skills\using-superpowers\SKILL.md' because it does not exist.
+```
+
+### 上下文（Context）
+- 技能清单中的 `r1` 根目录实际对应 `C:\Users\Administrator\.agents\skills`，而非 `.codex\skills`。
+- 随后通过已确认的 `.agents\skills\obra-superpowers-using-superpowers\SKILL.md` 路径成功读取技能说明。
+
+### 建议修复（Suggested Fix）
+读取技能前先依据技能根目录映射解析完整路径，遇到路径不存在时检查对应根目录，不要直接假设别名落在 `.codex\skills` 下。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: N/A
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-07T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已使用正确的 `.agents\skills` 路径读取技能并继续任务。
