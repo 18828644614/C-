@@ -398,6 +398,41 @@ apply_patch verification failed: Failed to find expected lines in E:\Linux\C++\0
 
 ---
 
+## [ERR-20260908-A07] rg-quoted-regex
+
+**Logged**: 2026-09-08T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+校对 Markdown 代码转义时，一次 PowerShell `rg` 命令中的正则和引号未闭合，命令返回解析错误；未影响目标文件。
+
+### 原始错误（Error）
+```
+rg: regex parse error:
+    (?:std::cout << message|ignore\(|C 风格字符串|std::cout << \)
+    ^
+error: unclosed group
+```
+
+### 上下文（Context）
+- 原命令试图在同一次检索中组合多个包含括号和引号的模式。
+- 后续拆分为简单的 `rg` 检索后完成了代码块转义检查。
+
+### 建议修复（Suggested Fix）
+复杂正则检索应拆分为多个只读命令，或优先使用固定字符串模式，减少 PowerShell 与正则双重转义。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: 03-STL与泛型编程/字符串、视图与范围.md
+- See Also: ERR-20260902-001
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-08T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已拆分检索命令，文档代码转义检查继续完成。
+
 ## [ERR-20260907-A01] skill-path-resolution
 
 **Logged**: 2026-09-07T00:00:00+08:00
@@ -568,3 +603,106 @@ Script error: apply_patch verification failed: invalid patch: multiple operation
 - **Resolved**: 2026-09-08T00:00:00+08:00
 - **Commit/PR**: N/A
 - **Notes**: 已读取正确技能文件，章节文件已成功写入并通过 `git diff --check`。
+
+---
+
+## [ERR-20260908-A05] cpp-emplace-aggregate-construction
+
+**Logged**: 2026-09-08T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+校验顺序容器综合示例时，C++17 下对只有数据成员的聚合体调用 `vector::emplace_back` 失败；示例本身未能按预期编译。
+
+### 原始错误（Error）
+```
+error: no matching function for call to 'Book::Book(const char [4], int)'
+```
+
+### 上下文（Context）
+- 综合示例使用 `books.emplace_back("STL", 260)`。
+- `Book` 最初只有 `title` 和 `pages` 两个数据成员，没有接受两个参数的构造函数。
+- C++17 的 `emplace_back` 会调用元素类型的构造函数，不能把任意参数自动当作聚合初始化列表。
+
+### 建议修复（Suggested Fix）
+如果示例要演示带参数的 `emplace_back`，为元素类型提供匹配构造函数；或者改成 `push_back(Book{"STL", 260})`，并在注释中说明两种写法的区别。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: 03-STL与泛型编程/顺序容器.md
+- See Also: N/A
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-08T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 为 `Book` 增加显式构造函数，并使用 `g++ -std=c++17 -Wall -Wextra -pedantic -fsyntax-only` 重新验证通过。
+## [ERR-20260908-SKILL]
+
+**Logged**: 2026-09-08T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+首次读取会话启动技能时误用了不存在的路径映射，导致命令失败。
+
+### 原始错误（Error）
+```
+Get-Content: Cannot find path 'C:\Users\Administrator\.codex\skills\r0\obra-superpowers-using-superpowers\SKILL.md' because it does not exist.
+```
+
+### 上下文（Context）
+- 技能清单中的 `r0` 是目录别名，不应直接拼接到实际文件系统路径中。
+- 实际技能文件位于 `C:\Users\Administrator\.codex\skills\obra-superpowers-using-superpowers\SKILL.md`。
+
+### 建议修复（Suggested Fix）
+使用技能根目录下的真实目录名读取文件；执行前可先列出技能根目录确认映射。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: C:\Users\Administrator\.codex\skills\obra-superpowers-using-superpowers\SKILL.md
+- See Also: N/A
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-08T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已定位并读取正确技能文件。
+
+---
+
+## [ERR-20260908-A06] skill-path-resolution
+
+**Logged**: 2026-09-08T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+本轮首次读取 `using-superpowers` 技能时遗漏了真实技能目录名，导致两次路径不存在；随后通过列出技能目录定位并成功读取。
+
+### 原始错误（Error）
+```
+Get-Content: Cannot find path 'C:\Users\Administrator\.agents\skills\using-superpowers\SKILL.md' because it does not exist.
+Get-Content: Cannot find path 'C:\Users\Administrator\.codex\skills\using-superpowers\SKILL.md' because it does not exist.
+```
+
+### 上下文（Context）
+- 技能目录映射仅提供根目录，实际文件位于 `obra-superpowers-using-superpowers` 子目录。
+- 本次失败没有修改目标文档，也没有影响后续章节补充。
+
+### 建议修复（Suggested Fix）
+读取技能前使用清单给出的完整相对路径；若路径仍不确定，先列出对应根目录，再读取实际 `SKILL.md`。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: C:\\Users\\Administrator\\.codex\\skills\\obra-superpowers-using-superpowers\\SKILL.md
+- See Also: ERR-20260908-A04, ERR-20260908-SKILL
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-08T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已读取正确技能文件并继续处理文档。
+
+---
