@@ -24,21 +24,37 @@
             }
           },
           {
-            "id": "f87b13e6394fb7a5",
+            "id": "ab9ebe2e9e4f53b2",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-现代C++/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "69030e850330777e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-并发与性能/原子操作与内存模型.md",
+                "file": "03-STL与泛型编程/标准库概览.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "原子操作与内存模型"
+              "title": "标准库概览"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -206,43 +222,43 @@
       "bases:新建数据库": false
     }
   },
-  "active": "f87b13e6394fb7a5",
+  "active": "69030e850330777e",
   "lastOpenFiles": [
-    "05-并发与性能/README.md",
-    "05-并发与性能/互斥、锁与条件变量.md",
-    "05-并发与性能/线程与任务.md",
-    "05-并发与性能/原子操作与内存模型.md",
-    "04-现代C++/智能指针.md",
-    "notes_线程与任务.md",
-    "task_plan_线程与任务.md",
     "04-现代C++/README.md",
-    "04-现代C++/结构化绑定与初始化.md",
+    "05-并发与性能/性能分析与优化.md",
     "04-现代C++/左值、右值与移动语义.md",
-    "04-现代C++/C++11到C++23.md",
+    "04-现代C++/概念与约束.md",
     "04-现代C++/auto、decltype与类型推导.md",
-    "02-核心语言/README.md",
-    "02-核心语言/继承与多态.md",
-    "02-核心语言/类与对象.md",
-    "类与对象.md",
-    "03-STL与泛型编程/README.md",
-    "02-核心语言/对象生命周期与RAII.md",
+    "05-并发与性能/README.md",
+    "tmp_stdlib_thread.exe",
+    "tmp_stdlib_io.exe",
+    "tmp_stdlib_ptr.exe",
+    "tmp_stdlib_move.exe",
+    "tmp_stdlib_thread.cpp",
+    "tmp_stdlib_io.cpp",
+    "tmp_stdlib_ptr.cpp",
+    "tmp_stdlib_move.cpp",
     "03-STL与泛型编程/标准库概览.md",
-    "07-问题解决/README.md",
+    "03-STL与泛型编程/README.md",
+    "03-STL与泛型编程/字符串、视图与范围.md",
+    "03-STL与泛型编程/算法.md",
+    "03-STL与泛型编程/顺序容器.md",
+    "03-STL与泛型编程/模板基础.md",
+    "03-STL与泛型编程/函数对象与Lambda.md",
+    "03-STL与泛型编程/关联容器.md",
+    "03-STL与泛型编程/迭代器.md",
+    "04-现代C++/智能指针.md",
+    "05-并发与性能/原子操作与内存模型.md",
+    "05-并发与性能/线程与任务.md",
+    "05-并发与性能/互斥、锁与条件变量.md",
+    "08-工程与项目/代码规范与静态分析.md",
+    "08-工程与项目/单元测试.md",
+    "08-工程与项目/调试与Sanitizer.md",
+    "08-工程与项目/项目选题与复盘.md",
+    "08-工程与项目/依赖管理与包管理.md",
+    "08-工程与项目/CMake构建.md",
     "08-工程与项目/README.md",
-    "06-实践笔记/README.md",
-    "02-核心语言/运算符重载.md",
-    "02-核心语言/构造函数与析构函数.md",
-    "exception_raii_output.txt",
-    "02-核心语言/异常处理.md",
-    "01-基础入门/类型、变量与常量.md",
-    "array_pointer_reference.exe",
-    "array_pointer_reference.cpp",
-    "types_variables_constants.exe",
-    "types_variables_constants.cpp",
-    "basic_control_flow.exe",
-    "basic_control_flow.cpp",
-    "_tmp_overview_demo.exe",
-    "_tmp_overview_demo.cpp",
-    "functions_scope_verify.exe"
+    "structured_binding_demo.exe",
+    "structured_binding_demo.cpp"
   ]
 }
