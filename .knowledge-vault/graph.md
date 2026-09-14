@@ -1,10 +1,14 @@
 # Knowledge Graph
 
-Generated on 2026-09-01. Obsidian users can also use the native graph view.
+Generated on 2026-09-14. Obsidian users can also use the native graph view.
 
 ```mermaid
 graph LR
-    n0["Project Knowledge Vault"]
+    n0["归档继承与多态完整会话"]
+    class n0 session
+    n1["补充继承、封装与多态的新手解释"]
+    class n1 session
+    n2["Project Knowledge Vault"]
     classDef session fill:#f4f4f4,stroke:#666,color:#222
     classDef topic fill:#e7f3ff,stroke:#2774a8,color:#13293d
     classDef decision fill:#fff2cc,stroke:#a67c00,color:#3d3000

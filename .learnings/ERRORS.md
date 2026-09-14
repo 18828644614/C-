@@ -398,6 +398,41 @@ apply_patch verification failed: Failed to find expected lines in E:\Linux\C++\0
 
 ---
 
+## [ERR-20260910-A01] apply_patch-empty-hunk
+
+**Logged**: 2026-09-10T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+尝试用空补丁记录工具操作失败，`apply_patch` 拒绝了不包含实际修改内容的 hunk。
+
+### 原始错误（Error）
+```
+Script error:
+apply_patch verification failed: invalid hunk at line 4, Update hunk does not contain any lines
+```
+
+### 上下文（Context）
+- 为记录前一次技能路径读取失败而调用 `apply_patch`。
+- 补丁没有实际修改内容，因此未改变任何项目文件。
+
+### 建议修复（Suggested Fix）
+使用包含实际新增文本的补丁追加记录；不要提交空 hunk。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: E:\MarkDown\C-\.learnings\ERRORS.md
+- See Also: N/A
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-10T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已识别为调用格式问题，后续改用有效补丁记录。
+
+---
+
 ## [ERR-20260908-A07] rg-quoted-regex
 
 **Logged**: 2026-09-08T00:00:00+08:00
