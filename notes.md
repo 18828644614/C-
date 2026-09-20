@@ -1,14 +1,23 @@
-# Notes: “字符串、视图与范围”章节
+# Notes: “CMake构建”章节
 
-## 项目观察
+# 项目观察
 
-- 目标文件 `03-STL与泛型编程/字符串、视图与范围.md` 只有 frontmatter、学习目标和空的“要点/示例与实践”小节。
-- 相邻的《迭代器》章节已经介绍了 `[begin, end)`、迭代器失效和 C++20 ranges 入门，因此本章应链接并复用这些概念，避免重复过深。
-- 项目整体面向学习者，代码示例较短，注释直接解释“为什么”，适合继续采用这种风格。
+- 目标文件 `08-工程与项目/CMake构建.md` 只有 frontmatter、学习目标和空的“要点/示例与实践”小节。
+- 相邻的《源文件、编译与链接》已经解释编译器、目标文件和链接器，本章应承接这些概念，重点说明 CMake 如何组织并驱动它们。
+- 项目整体面向学习者，章节使用中文解释、短代码块和 Obsidian Wiki 链接；本章保留该风格，但需要提供一个足够完整的多目标示例。
 
 ## 内容设计
 
-- 先建立三种对象模型：`std::string` 拥有字符，`std::string_view` 借用字符，range/view 描述一段可遍历数据。
-- 围绕新手高频难点展开：`operator>>` 与 `getline` 的换行残留、`[]` 与 `at()`、C 字符串的 `\\0`、`string_view` 悬空、临时对象生命周期、ranges 的惰性求值。
-- 使用 C++20 示例展示 `std::ranges` 算法和 `views::filter/transform/take` 管道，同时提醒视图不能替代容器、需要时应物化为 `vector`。
-- 最后提供综合示例、错误清单和练习，帮助读者从“会写”过渡到“知道何时安全”。
+- 先建立三层关系：编译器负责翻译 C++，底层构建工具负责执行命令，CMake 负责生成和协调构建系统。
+- 按 configure → build → test → install 的顺序解释 CMake 工作流，避免把 `cmake -S/-B` 和 `cmake --build` 混为同一步。
+- 以 Windows 为主线，分别展示 Visual Studio 多配置生成器与 MinGW Makefiles 单配置生成器；强调 `--config Debug` 只适用于多配置生成器的常见用法。
+- 完整示例包含 `greeting` 静态库、`greet` 可执行程序和 `greet_test` 测试目标，展示 target、`target_link_libraries`、`target_include_directories`、编译特性和 CTest。
+- 覆盖源目录/构建目录、私有/公开依赖、生成器缓存、配置选项、警告、常见错误和清理重配等初学者高频问题。
+
+## 验证清单
+
+- [ ] 章节保留 frontmatter、学习目标、要点、示例与实践、关联结构。
+- [ ] 代码块中的 CMake 语法、PowerShell 命令和 C++ 示例相互一致。
+- [ ] 主示例可从全新构建目录执行配置、构建、测试和运行。
+- [ ] 对单配置/多配置生成器、`PRIVATE/PUBLIC/INTERFACE` 和 `configure/build/test` 的说明准确。
+- [ ] 完成后检查 Markdown 围栏、链接、标题层级和工作区差异。

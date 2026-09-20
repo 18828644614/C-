@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-核心语言/继承与多态.md",
+                "file": "08-工程与项目/CMake构建.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "继承与多态"
+              "title": "CMake构建"
             }
           }
         ],
@@ -208,9 +208,25 @@
   },
   "active": "e6196c9f6cab3306",
   "lastOpenFiles": [
+    "cmake-doc-check/build/greet.exe",
+    "cmake-doc-check/build/greet_test.exe",
+    "cmake-doc-check/build",
+    "cmake-doc-check/tests/greeting_test.cpp",
+    "cmake-doc-check/tests",
+    "cmake-doc-check/app/main.cpp",
+    "cmake-doc-check/app",
+    "cmake-doc-check/src/greeting.cpp",
+    "cmake-doc-check/src",
+    "cmake-doc-check/include/greeting/greeting.h",
+    "cmake-doc-check/include/greeting",
+    "05-并发与性能/原子操作与内存模型.md",
+    "03-STL与泛型编程/字符串、视图与范围.md",
+    "03-STL与泛型编程/迭代器.md",
+    "03-STL与泛型编程/关联容器.md",
+    "08-工程与项目/CMake构建.md",
+    "02-核心语言/继承与多态.md",
     "02-核心语言/类与对象.md",
     "02-核心语言/README.md",
-    "02-核心语言/继承与多态.md",
     "类与对象.md",
     "01-基础入门/函数与作用域.md",
     "02-核心语言/构造函数与析构函数.md",
@@ -222,27 +238,11 @@
     "05-并发与性能/互斥、锁与条件变量.md",
     "03-STL与泛型编程/模板基础.md",
     "03-STL与泛型编程/README.md",
-    "05-并发与性能/原子操作与内存模型.md",
     "05-并发与性能/性能分析与优化.md",
     "04-现代C++/左值、右值与移动语义.md",
     "03-STL与泛型编程/函数对象与Lambda.md",
     "04-现代C++/C++11到C++23.md",
-    "03-STL与泛型编程/迭代器.md",
     "04-现代C++/auto、decltype与类型推导.md",
-    "tmp_auto_decltype_check.exe",
-    "tmp_auto_decltype_check.cpp",
-    "03-STL与泛型编程/顺序容器.md",
-    "02-核心语言/运算符重载.md",
-    "02-核心语言/异常处理.md",
-    "03-STL与泛型编程/算法.md",
-    "05-并发与性能/并发设计与同步策略.md",
-    "tmp_stdlib_thread.exe",
-    "tmp_stdlib_io.exe",
-    "tmp_stdlib_ptr.exe",
-    "tmp_stdlib_move.exe",
-    "tmp_stdlib_thread.cpp",
-    "tmp_stdlib_io.cpp",
-    "tmp_stdlib_ptr.cpp",
-    "tmp_stdlib_move.cpp"
+    "03-STL与泛型编程/顺序容器.md"
   ]
 }

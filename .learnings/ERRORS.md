@@ -398,6 +398,75 @@ apply_patch verification failed: Failed to find expected lines in E:\Linux\C++\0
 
 ---
 
+## [ERR-20260920-CMAKE-001] 技能路径读取
+
+**Logged**: 2026-09-20T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+首次读取本轮所需技能时将技能根目录误判为 `.codex\skills`，两次 `Get-Content` 因路径不存在失败；未影响目标文档。
+
+### 原始错误（Error）
+```
+Get-Content: Cannot find path 'C:\Users\Administrator\.codex\skills\r1\obra-superpowers-using-superpowers\SKILL.md' because it does not exist.
+Get-Content: Cannot find path 'C:\Users\Administrator\.codex\skills\r1\davila7-claude-code-templates-planning-with-files\SKILL.md' because it does not exist.
+```
+
+### 上下文（Context）
+- 技能清单中的 `r1` 实际映射到 `C:\Users\Administrator\.agents\skills`，而不是 `C:\Users\Administrator\.codex\skills`。
+- 随后按完整清单路径读取了 `using-superpowers`、`planning-with-files` 和 `self-improvement` 技能。
+
+### 建议修复（Suggested Fix）
+读取技能前先按清单中的 Skill roots 解析别名，再拼接技能条目的相对路径；不要根据相似目录名猜测根目录。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: task_plan.md, notes.md
+- See Also: ERR-20260908-A06
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-20T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已改用 `C:\Users\Administrator\.agents\skills` 下的正确路径并继续任务。
+
+---
+
+## [ERR-20260920-CMAKE-002] 工作计划补丁上下文不匹配
+
+**Logged**: 2026-09-20T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: docs
+
+### 摘要（Summary）
+第一次更新历史 `task_plan.md` 时，补丁中的一行措辞与文件实际内容不一致，`apply_patch` 校验失败；文件没有被修改。
+
+### 原始错误（Error）
+```
+apply_patch verification failed: Failed to find expected lines in E:\MarkDown\C-\task_plan.md
+```
+
+### 上下文（Context）
+- 历史计划中实际写的是“短小可复制代码”，而补丁上下文遗漏了“可复制”三个字。
+- 重新读取文件并按精确上下文拆分补丁后，计划更新成功。
+
+### 建议修复（Suggested Fix）
+对历史文件做大范围更新前先读取带行号的精确内容；补丁失败后先确认文件状态，再缩小上下文重试。
+
+### 元数据（Metadata）
+- Reproducible: yes
+- Related Files: task_plan.md
+- See Also: ERR-20260902-A03
+
+### 解决情况（Resolution）
+- **Resolved**: 2026-09-20T00:00:00+08:00
+- **Commit/PR**: N/A
+- **Notes**: 已用精确上下文更新计划，未产生部分写入。
+
+---
+
 ## [ERR-20260910-A01] apply_patch-empty-hunk
 
 **Logged**: 2026-09-10T00:00:00+08:00

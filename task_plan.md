@@ -1,27 +1,28 @@
-# Task Plan: 补充“字符串、视图与范围”章节
+# Task Plan: 完善“CMake构建”章节
 
 ## Goal
-从 C++ 新手角度完善“字符串、视图与范围”章节，补充难点讲解、可运行示例和代码注释，并保持项目现有 Markdown 风格。
+面向 C++ 初学者系统补充“CMake构建”章节，保留现有 Markdown 章节结构，提供 Windows 优先、可运行且概念准确的完整示例。
 
 ## Phases
-- [x] Phase 1: 了解项目结构、章节位置和写作风格
-- [x] Phase 2: 梳理章节知识点与示例设计
-- [x] Phase 3: 编写并补充章节内容
-- [x] Phase 4: 校对 Markdown、代码和概念准确性
+- [x] Phase 1: 检查项目结构、目标文件和相邻章节风格
+- [x] Phase 2: 梳理 CMake 基础概念、Windows 工作流和示例设计
+- [ ] Phase 3: 编写章节正文与完整项目示例
+- [ ] Phase 4: 校对 Markdown、命令、CMake 语义和章节连贯性
 
 ## Key Questions
-1. 目标章节文件在哪里，前后章节采用什么结构？
-2. 新手最容易混淆的 string、string_view、范围和迭代器问题有哪些？
-3. 示例是否覆盖生命周期、边界、算法和 C++20 ranges 的常见坑？
+1. 如何向初学者解释“编译器”和 CMake 的分工，而不把 CMake 误讲成编译器？
+2. Windows 下 Visual Studio 多配置生成器与 MinGW 单配置生成器的命令差异是什么？
+3. 示例是否覆盖源目录/构建目录、目标、依赖、头文件、测试、Debug/Release 和常见错误？
 
 ## Decisions Made
-- 以“先理解对象，再理解视图，最后组合范围算法”的渐进顺序组织内容。
-- 示例优先使用标准库和短小可复制代码，并在困难处添加行内注释。
+- 保留现有 frontmatter、学习目标、要点、示例与实践、关联五部分结构，在空小节下增加循序渐进的子章节。
+- 以 CMake 3.20+、C++20 和 Windows PowerShell 为示例基线，同时解释 MSVC 与 MinGW 的差异。
+- 使用一个包含静态库、可执行程序和测试目标的小项目贯穿主要命令；测试使用 CTest，不引入额外第三方框架。
+- 将用户最容易混淆的 configure、build、test、install 阶段和单配置/多配置生成器单独说明。
 
 ## Errors Encountered
-- 初次读取技能文件时使用了错误的根目录，已改用 `C:/Users/Administrator/.agents/skills`。
-- 一次 `apply_patch` 同时删除并新增同一文件导致校验失败，随后拆成两个补丁完成。
-- 一次 `rg` 命令的正则引号未闭合，改用简单的逐项检查。
+- 初次读取技能文件时误用了 `.codex\skills` 路径；已改用清单映射的 `C:\Users\Administrator\.agents\skills`。
+- 更新历史计划时补丁上下文与文件实际措辞不一致，已重新读取精确内容并拆分补丁。
 
 ## Status
-**Completed** - 章节已补写，并完成 Markdown 结构检查与 C++20 示例语法校验。
+**Currently in Phase 3** - 计划与研究笔记已更新，正在编写 CMake 章节。
