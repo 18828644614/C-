@@ -810,3 +810,66 @@ Get-Content: Cannot find path 'C:\Users\Administrator\.codex\skills\using-superp
 - **Notes**: 已读取正确技能文件并继续处理文档。
 
 ---
+## [ERR-20260921-001] parallel_skill_file_read
+
+**Logged**: 2026-09-21T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: infra
+
+### Summary
+并行读取两个技能文件时，PowerShell 进程创建失败。
+
+### Error
+```text
+CreateProcessWithLogonW failed: 1056
+```
+
+### Context
+- 尝试并行读取 `using-superpowers/SKILL.md` 与 `project-knowledge-vault/SKILL.md`
+- 当前环境：Codex desktop，PowerShell，工作目录 `D:\\learn\\C-`
+
+### Suggested Fix
+改为串行读取技能文件，避免同时创建多个受限 PowerShell 进程。
+
+### Metadata
+- Reproducible: unknown
+- Related Files: `.learnings/ERRORS.md`
+
+### Resolution
+- **Resolved**: 2026-09-21T00:00:00+08:00
+- **Notes**: 改为串行调用后读取成功。
+
+---
+
+## [ERR-20260921-002] vault_windows_default_encoding
+
+**Logged**: 2026-09-21T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: infra
+
+### Summary
+首次运行知识库脚本时使用 Windows 默认编码读取中文文件名和 wikilink，产生乱码和错误的 broken-link 警告。
+
+### Error
+~~~text
+WARNING: broken link in 10-topics\C++������������׼��.md
+~~~
+
+### Context
+- 运行 'vault.py refresh --root D:\learn\C-'
+- 知识库包含中文文件名和中文 wikilink
+
+### Suggested Fix
+在 Windows 上使用 'python -X utf8' 运行 vault 脚本，并再次执行 'refresh' 与 'check'。
+
+### Metadata
+- Reproducible: yes
+- Related Files: '.knowledge-vault/10-topics/C++核心语言面试准备.md'
+
+### Resolution
+- **Resolved**: 2026-09-21T00:00:00+08:00
+- **Notes**: 使用 UTF-8 模式重跑后，仅发现并修复了指向 vault 外部原文的链接，最终检查通过。
+
+---

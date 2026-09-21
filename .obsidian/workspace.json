@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08-工程与项目/CMake构建.md",
+                "file": "01-基础入门/第一章面试题与答案.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CMake构建"
+              "title": "第一章面试题与答案"
             }
           }
         ],
@@ -100,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "4420ed6750a49f84",
@@ -208,6 +207,8 @@
   },
   "active": "e6196c9f6cab3306",
   "lastOpenFiles": [
+    "02-核心语言/第二章面试题与答案.md",
+    "08-工程与项目/CMake构建.md",
     "cmake-doc-check/build/greet.exe",
     "cmake-doc-check/build/greet_test.exe",
     "cmake-doc-check/build",
@@ -218,12 +219,10 @@
     "cmake-doc-check/src/greeting.cpp",
     "cmake-doc-check/src",
     "cmake-doc-check/include/greeting/greeting.h",
-    "cmake-doc-check/include/greeting",
     "05-并发与性能/原子操作与内存模型.md",
     "03-STL与泛型编程/字符串、视图与范围.md",
     "03-STL与泛型编程/迭代器.md",
     "03-STL与泛型编程/关联容器.md",
-    "08-工程与项目/CMake构建.md",
     "02-核心语言/继承与多态.md",
     "02-核心语言/类与对象.md",
     "02-核心语言/README.md",
